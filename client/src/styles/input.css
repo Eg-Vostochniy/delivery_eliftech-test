@@ -1,0 +1,13 @@
+.custom__input {
+  padding: 10px;
+  font-size: 17px;
+  letter-spacing: 0.3mm;
+  border: 1px solid #14143b;
+  border-radius: 6px;
+  background: rgba(93, 188, 255, 0.644);
+}
+.custom__input::placeholder {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}

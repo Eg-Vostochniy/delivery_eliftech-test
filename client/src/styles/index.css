@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+ul,
+li {
+  list-style: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+}
+a {
+  color: #4db5ff;
+  text-decoration: none;
+  transition: all 400ms ease;
+}
+body {
+  background: #1f1f38;
+  color: #fff;
+  line-height: 1.7;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.btn {
+  width: max-content;
+  color: #4db5ff;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid #4db5ff;
+  transition: all 400ms ease;
+  padding: 10px 25px;
+  text-align: center;
+}
+.btn:hover {
+  background: rgb(224, 224, 224);
+  color: #1f1f38;
+  border-color: transparent;
+}
+.btn-primary {
+  background: #4db5ff;
+  color: #1f1f38;
+  transition: all 400ms ease;
+  padding: 10px 25px;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  width: max-content;
+  text-align: center;
+  margin: 10px;
+}
+.btn-primary:hover {
+  background: rgb(255, 255, 255);
+}
+
+@import url('./navbar.css');
+@import url('./shop.css');
+@import url('./shoppingCart.css');
+@import url('./input.css');
+@import url('auth.css');
+@import url('history.css');
