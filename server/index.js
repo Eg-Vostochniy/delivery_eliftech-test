@@ -1,28 +1,29 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 import cors from 'cors'
 import express from 'express'
-import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 import routes from './routes/index.js'
 import jwt from 'jsonwebtoken'
-
-dotenv.config()
 
 const app = express()
 
 app.use(express.json())
 app.use(cors())
 app.use(cookieParser())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: false }))
+app.use(morgan('dev'))
 
 app.use('/api', routes.auth)
 app.use('/api', routes.shopItems)
 app.use('/api', routes.order)
 
-const URI = process.env.MONGODB_URI
+//const URI = process.env.MONGODB_URI
 
 mongoose.connect(
-  URI,
+  'mongodb+srv://siemens:123@cluster0.vmfw7.mongodb.net/?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
   },
@@ -31,6 +32,13 @@ mongoose.connect(
     console.log('Mongo connected')
   }
 )
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client', 'build', 'index.html'))
+  })
+}
 
 const PORT = process.env.PORT || 5000
 
