@@ -18,10 +18,10 @@ app.use('/api', routes.auth)
 app.use('/api', routes.shopItems)
 app.use('/api', routes.order)
 
-//const URI = process.env.MONGODB_URI
+const URI = process.env.MONGODB_URI
 
 mongoose.connect(
-  'mongodb+srv://siemens:123@cluster0.vmfw7.mongodb.net/?retryWrites=true&w=majority',
+  URI,
   {
     useNewUrlParser: true,
   },
