@@ -21,7 +21,7 @@ app.use('/api', routes.order)
 const URI = process.env.MONGODB_URI
 
 mongoose.connect(
-  URI,
+  `${URI}`,
   {
     useNewUrlParser: true,
   },
